@@ -26,6 +26,8 @@ struct ColorChangeScreen: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(backgrounColor)
         .edgesIgnoringSafeArea(.all)
+        .animation(.easeInOut(duration: 0.5), value: backgrounColor)
+
     }
     
     
@@ -64,7 +66,7 @@ struct ColorChangeScreen: View {
                 }, isExpanded: index == expandedItemIndex, selectedColor: backgrounColor)
             }
         }
-        .animation(.easeInOut(duration: 0.5), value: showPicker) // Apply animation here
+        .animation(.easeInOut(duration: 0.5), value: showPicker)
     }
     
     private func handleColorClicked(color: Color, index: Int) {
