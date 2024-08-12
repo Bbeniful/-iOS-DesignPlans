@@ -117,8 +117,13 @@ struct ColorChangeItem: View {
             }
             .background(self.color)
             .clipShape(RoundedCornersShape(corners: [.topLeft, .bottomLeft], radius: 15))
+            .overlay(
+                RoundedCornersShape(corners: [.topLeft, .bottomLeft], radius: 15)
+                    .stroke(Color.white, lineWidth: isExpanded ? 0 : 2)
+            )
             .frame(width: isExpanded ? 350 : 150, height: 60)
             .frame(maxWidth: .infinity, alignment: .trailing)
+            
             
         }
     }
